@@ -1,0 +1,226 @@
+/* Meyer Reset */
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+/* Clearfix */
+.clearfix:after {
+content: ".";
+display: block;
+clear: both;
+visibility: hidden;
+line-height: 0;
+height: 0;
+}
+ 
+.clearfix { display: inline-block; }
+html[xmlns] .clearfix { display: block; }
+* html .clearfix { height: 1%; }
+
+* {
+   margin: 0px;
+   padding: 0px;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	/* https://css-tricks.com/perfect-full-page-background-image/*/
+    background: url(img/locations/waco.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+#beta-mode-bulletin {
+	background-color: white;
+	position: absolute;
+	opacity: 0;
+    width: 100%;
+	height: 800px;
+}
+
+#beta-mode-bulletin p {
+	display: none;
+}
+
+#beta-mode-bulletin img {
+	display: none;
+}
+
+#rain-screen {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("img/textures/blank.png");
+	/*https://stackoverflow.com/questions/18588835/allow-a-div-to-cover-the-whole-page-instead-of-the-area-within-the-container*/
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: bold;
+	color: #000080;
+	font-family: 'Roboto', sans-serif;
+}
+
+p {
+	font-size: 16px;
+}
+
+#dialog-box p {
+	margin: 16px 0;
+}
+
+#graphics-container {
+	margin: 25px auto;
+	display: block;
+	height: 250px;
+	width: 1000px;
+}
+
+#gallons-cups-container {
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	top: 300px; /* This value should be different for different screen sizes - use media queries */
+	display: block;
+}
+
+#gallons-cups-container {
+	width: 100%;
+}
+
+.floated-graphics {
+	padding: 10px 5px;
+}
+
+.floated-graphics li {
+	float: left;
+	margin: 10px;
+	list-style-type: none;
+}
+
+#cloud {
+	width: 100%;
+	height: 400px;
+    background-color: hsla(190, 30%, 94%, 0.4);
+    -webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+    border-radius: 200px;
+}
+
+#control-panel {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 250px;
+	width: 100%;
+    background-color: #e2ecf0;
+    background-color: hsla(190, 30%, 94%, 0.5);
+}
+
+.ui-section {
+	height: 240px;	
+	margin: 10px 1%;
+	overflow: hidden;
+}
+
+#sliders {
+	display: block;
+	float: left;
+	width: 20%;
+}
+
+#location-and-button {
+	float: left;
+	width: 20%;;
+}
+
+#dialog-box {
+	position: absolute;
+	width: 550px;
+	height: 200px;
+	bottom: 50px;
+	right: 0;
+}
+
+#dialog-box-background {
+	background-color: white;
+    padding: 10px 30px;
+    margin: 17px;
+    height: 200px;
+	display: block;
+	float: left;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+}
+
+#sliders-table {
+	margin-top: 10px;
+}
+
+select {
+	padding: 10px;
+	margin: 10px 5px 5px 0;
+	font-size: 18px;
+}
+
+button {
+	margin-top: 25px;
+	padding: 10px;
+	display: block;
+	font-size: 18px;
+	background-color: #1551b2;
+	color: white;
+	border: none;
+	font-family: 'Open Sans', sans-serif;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: #6da5ff;
+}
+
+#tryAgainButton {
+	display: none;
+}
+
+@media screen and (max-width: 850px) {
+	#beta-mode-bulletin {
+		background-color: #1551b2;
+		opacity: 0.9;
+		z-index: 100;
+		margin-top: -30px;
+	}
+	
+	#beta-mode-bulletin img {
+		display: block;
+		margin: 25px auto;
+		width: 100px;
+	}
+	
+	#beta-mode-bulletin p {
+		display: block;
+		color: white;
+		margin: 30px 50px;
+	}
+	
+	#beta-mode-bulletin a {
+		color: white;
+		font-weight: bold;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	#beta-mode-bulletin {
+		height: 500px;
+	}
+}
