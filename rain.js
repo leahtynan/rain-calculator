@@ -92,6 +92,7 @@ var monthNames  = {
 }
 var date = new Date();
 var month = date.getMonth();
+var areCreditsShowing = false;
 
 document.getElementById("myHeightRange").addEventListener("change", function(){
     var height = document.getElementById("myHeightRange").value;
@@ -246,16 +247,37 @@ function calcRain() {
 	toggleControlPanel();
 };
 
+
+function toggleCredits() {
+	var credits = document.getElementById("credits");
+	var iconBackground = document.getElementById("credits-icon")
+	if (areCreditsShowing == false) {
+		credits.style.display = "block";
+		areCreditsShowing = true;
+		iconBackground.style.backgroundColor = "transparent";
+	} else {
+		credits.style.display ="none";
+		areCreditsShowing = false;
+		iconBackground.style.backgroundColor = "#1551b2";
+	}
+}
+
 // -------------------- BUTTONS (MORE LISTENERS) --------------------
 
 var calcRainButton = document.getElementById("start-rain-button"); 
 calcRainButton.addEventListener("click", function () { 
   calcRain();
 });
+
 var tryAgainButton = document.getElementById("tryAgainButton"); 
 tryAgainButton.addEventListener("click", function () { 
 	isRaining = false;
 	console.log("Try again button was pressed");
 	toggleControlPanel();
 	clearGallonsCups();
+});
+
+var moreInfoButton = document.getElementById("credits-icon"); 
+moreInfoButton.addEventListener("click", function () { 
+  toggleCredits();
 });
